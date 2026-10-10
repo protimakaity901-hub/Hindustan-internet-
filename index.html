@@ -1,1 +1,66 @@
-
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HINDUSTAN INTERNET | Online Print</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172554}
+header{background:#073b78;color:white;padding:24px 16px;text-align:center}
+header h1{margin:0;font-size:25px}
+header p{margin-bottom:0}
+main{max-width:520px;margin:20px auto;padding:16px}
+.card{background:white;padding:20px;border-radius:15px;box-shadow:0 3px 15px #0001;margin-bottom:18px}
+label{display:block;font-weight:bold;margin:14px 0 6px}
+input,select,button{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
+button{background:#0755a5;color:white;border:0;font-weight:bold;margin-top:16px}
+.price{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee}
+.note{font-size:13px;color:#64748b;line-height:1.6}
+</style>
+</head>
+<body>
+<header>
+<h1>HINDUSTAN INTERNET</h1>
+<p>অনলাইনে প্রিন্ট অর্ডার করুন</p>
+</header>
+<main>
+<div class="card">
+<h2>📄 Print Order</h2>
+<form id="orderForm">
+<label>আপনার নাম</label>
+<input id="name" required placeholder="আপনার নাম লিখুন">
+<label>মোবাইল নম্বর</label>
+<input id="phone" required type="tel" placeholder="10 digit mobile number" pattern="[0-9]{10}">
+<label>ফাইল আপলোড করুন (PDF / JPG / PNG)</label>
+<input id="file" required type="file" accept=".pdf,.jpg,.jpeg,.png" multiple>
+<label>প্রিন্টের ধরন</label>
+<select id="type">
+<option value="bw">সাদা-কালো — ₹5 / পৃষ্ঠা</option>
+<option value="color">কালার — ₹10 / পৃষ্ঠা</option>
+</select>
+<label>কত কপি?</label>
+<input id="copies" type="number" min="1" value="1" required>
+<div class="price"><span>সাদা-কালো প্রিন্ট</span><b>₹5 / পৃষ্ঠা</b></div>
+<div class="price"><span>কালার প্রিন্ট</span><b>₹10 / পৃষ্ঠা</b></div>
+<p class="note">চূড়ান্ত মূল্য পৃষ্ঠা ও কপির সংখ্যা যাচাই করে দোকান থেকে নিশ্চিত করা হবে।</p>
+<button type="submit">অর্ডার জমা দিন</button>
+</form>
+<p id="message"></p>
+</div>
+<div class="card">
+<h3>অর্ডার কীভাবে করবেন?</h3>
+<p>১. নাম ও মোবাইল নম্বর লিখুন।</p>
+<p>২. PDF অথবা ছবি আপলোড করুন।</p>
+<p>৩. প্রিন্টের ধরন বেছে অর্ডার জমা দিন।</p>
+<p class="note">এটি প্রাথমিক ডেমো। অর্ডার এখনও অ্যাডমিনের কাছে পাঠানো বা ফাইল সংরক্ষণ করা হচ্ছে না।</p>
+</div>
+</main>
+<script>
+document.getElementById('orderForm').addEventListener('submit',function(e){
+e.preventDefault();
+document.getElementById('message').textContent='ফর্মটি পরীক্ষা করা হয়েছে। অর্ডার পাঠানোর ব্যবস্থা এখনও চালু হয়নি। দোকানে সরাসরি যোগাযোগ করুন।';
+});
+</script>
+</body>
+</html>
